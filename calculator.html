@@ -11,10 +11,12 @@
 		<h1><strong>Improving Your TI-84 Plus CE</strong></h1>
 		<center>&copy Rishabh 2019 - Lazy website, I know, I had one day</center>
 		<h2>About this guide</h2>	
-		<p>This guide is for the TI-84 Plus CE, and also applies to the TI-84 Plus CE-T. Might work on Plus C silver edition, haven't tested. eZ80/Z80 compatibility is complicated. Blame IXYS.</p> 
+		<p>This guide is for the TI-84 Plus CE, and also applies to the TI-84 Plus CE-T. Maybe TI-83 Premium CE too. Might work on Plus C silver edition, haven't tested. eZ80/Z80 compatibility is complicated. Blame IXYS.</p> 
 		<p>This guide is by no means exhaustive, although I'd like to think that it's pretty thorough.</p>
 		<p>My configuration should prevent you from losing your programs in the event of a memory wipe, and should also be able to hide programs from the PRGM menu. This should enable you to use the programs on the ACT, SAT, and AP exams. Do not use this to copy down questions and answers. You will be in unbelievable trouble. I am not responsible if you do something dumb and get caught.</p>
-		<p>Go through this guide completing everything up to the table of contents, at which point you can choose the functionality you need.</p>
+		<p>Go through this guide completing everything up to the table of contents, at which point you can choose the functionality you need. You can email me if you have any questions at rishabh(at)null.net.</p>
+		<h4>About Test Mode</h4>
+		<p>Test Mode is a feature used by some teachers and testing organizations to disable apps and programs. It is characterized by a blue bar at the top. Your programs may not work in this case. Test mode requirements are rare and when I took the SAT, ACT, and a math AP, they did not require it. Nevertheless, I am working on a bypass. Multiple people have already done it, particularly on the nSpire (PTTKiller, PTTCopier), but the big forums censor it religiously for some reason. I do have some leads though. For now, if you're interested in a bypass, don't upgrade past OS 5.3.0 and install the apps you need directly from <a href="https://education.ti.com/en/software/search/ti-84-plus-ce">here.</a></p>
 		<h2>What you'll need</h2>
 		<ul>
 			<li>A Windows or Mac computer with USB-A ports, adaptors work fine if <i>somebody</i> removed type-A from their $1,500+ laptops.</li>
@@ -61,15 +63,21 @@
 	  <ul>
 	  <li><a href="#Numeric">Numeric Solver</a></li>
 	  <li><a href="#Polynomial">Polynomial Root Finder</a></li>
-	  <li><a href="#Simultaneous Equations">Simultaneous Equation Solver</a></li>
+	  <li><a href="#Simultaneous">Simultaneous Equation Solver</a></li>
 	  </ul>
 </li>
 <li><a href="#geometry">Geometry</a></li>
 	<ul>
 		<li><a href="#Conics">Conics</a></li>
 		<li><a href="#General Geometry">General Geometry</a></li>
+		<li><a href="Unit Circle">Unit Circle</a></li>
 	</ul>
-<li><a href="#Third_Point_Header">3 Third Point Header</a></li>
+<li><a href="#Polynomials">Polynomials (nSpire CAS BTFO lmao)</a></li>
+	<ul>
+		<li><a href="#Factorization">Factorization</a></li>
+		<li><a href="#Multiplication">Multiplication</a></li>
+		<li><a href="#Division">Division</a></li>
+	</ul>
 </ul>
 </div>
 		
@@ -97,6 +105,26 @@
 		<img src="images/conics.png" alt="conics.png">
 		<img src="images/conics2.png" alt="conics2.png">
 		<h4 id="General Geometry">General Geometry</h4>
-		<p>For this section, you'll need to install a program. You can download it <a href="assets/files/GEOMETRY.8xp">here.</a> I have rehosted it because I cannot locate the original author.</p>
+		<p>For this section, you'll need to install a program. You can download it <a href="assets/files/GEOMETRY.8xp">here.</a> I have rehosted it because I cannot locate the original author. Remember to archive and hide it in the Cesium shell. Run it, choose the calculation and shape you want to use, and fill in the value from the respective formula. Supports area, volume, and surface area for many, many shapes. </p>
+		<img src="images/geometry.png" alt="geometry.png">
+		<h4 id="Unit Circle">Unit Circle</h4>
+		<p>For this section, we will be needing another program, this time UNITCIRC by Sam Gill ("DragonRise"). You can download it <a href="https://www.ticalc.org/pub/83plus/basic/math/geometry/unitcirc.zip">here.</a></p>
+		<p>Start the program and use the up and down arrow keys to navigate along the circle. The x shows you which part of the circle is selected. The middle section shows the sign guide. The top left number is the x-coordinate and the top right number is the y-coordinate. These can be a little difficult to see at times, so look carefully. The bottom right value is the angle in radians, and the bottom left is the same in degrees. </p>
+		<img src="images/unitcirc.png" alt="unitcirc.png">
+		<h2 id="Polynomials">Polynomials</h2>
+		<h4 id="Factorization">Factorization</h4>
+		<p>Factorization of polynomials is also possible on your calculator. You will need a new program, APOLYFC9, by Anders Tiberg and Joe Erdeky. Download it <a href="https://www.ticalc.org/pub/83plus/basic/math/algebra/apolyfc9.zip">here.</a></p>
+		<p>This program is very simple. Enter the polynomial at the POLYNOMIAL prompt. If you get anything other than that prompt on running the program, hit clear and it should come up. </p>
+		<img src="images/polyfact.png" alt="polyfact.png">
+		<img src="images/plyfact2.png" alt="polyfact.png8">
+		<h4 id="Multiplication">Multiplication</h4>
+		<p>For multiplication we are going to need another program. This one is DEFACTOR/POLYMULT by Anders Tiberg. You can download it <a href="https://www.ticalc.org/archives/files/fileinfo/424/42492.html">here.</a> Use either one. Note that DEFACTOR provides it as a list of coefficients. If POLYMULT doesn't work as expected, use that.</p>
+		<h4 id="Division">Division</h4>
+		<p>For division, we're going to use another one of Anders Tiberg's programs, POLYDIV. Download it <a href="https://www.ticalc.org/pub/83plus/basic/math/algebra/polydiv1.zip">here.</a> Install POLYDIV.8xp. You should use the program according to Tiberg's instructions.</p> <br>
+		<q>This program divides polynomials. Enter them like: (X^3+X^2+X-3)(X^2+2X+3). You can also enter several polynomials: (117X^4-20X^3-390X^2+20X+273)(X^2-1)(9X+13)(13X-21). The first polynomial will then be divided by the second, and the quotient will be divided by the third, and so on. There are no other limits to the number of polynomials you can enter than memory, and of course the degree of the first polynomial. You will get the coefficients of the quotient and the remainder for each step. You can use any one variable A to theta. The terms can be entered in any order, and there can be more than one of the same degree.</q>
+		<br>
+		<p>Put simply, enter the polynomials each enclosed in their own set of parentheses. It will then give you the quotient and remainder for each step.</p>
+		<img src="images/polydiv.gif" alt="polydiv.gif">
 	</body>
+	
 </html>
