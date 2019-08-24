@@ -1,0 +1,102 @@
+<!doctype html>
+<!--Yes it's bad, Dreamweaver has crappy indentation. I couldn't be bothered to fix it, most of this is handwritten but auto formatted-->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator Improvements</title>
+<link href="assets/css/calculator.css" rel="stylesheet" type="text/css">
+</head>
+	<body>
+		<h1><strong>Improving Your TI-84 Plus CE</strong></h1>
+		<center>&copy Rishabh 2019 - Lazy website, I know, I had one day</center>
+		<h2>About this guide</h2>	
+		<p>This guide is for the TI-84 Plus CE, and also applies to the TI-84 Plus CE-T. Might work on Plus C silver edition, haven't tested. eZ80/Z80 compatibility is complicated. Blame IXYS.</p> 
+		<p>This guide is by no means exhaustive, although I'd like to think that it's pretty thorough.</p>
+		<p>My configuration should prevent you from losing your programs in the event of a memory wipe, and should also be able to hide programs from the PRGM menu. This should enable you to use the programs on the ACT, SAT, and AP exams. Do not use this to copy down questions and answers. You will be in unbelievable trouble. I am not responsible if you do something dumb and get caught.</p>
+		<p>Go through this guide completing everything up to the table of contents, at which point you can choose the functionality you need.</p>
+		<h2>What you'll need</h2>
+		<ul>
+			<li>A Windows or Mac computer with USB-A ports, adaptors work fine if <i>somebody</i> removed type-A from their $1,500+ laptops.</li>
+				<ul><li>It works for me on Windows 10 Build 1903 and macOS Mojave 10.14.6 on my 2019 MacBook Pro Touch Bar and 2015 Air.</li></ul>
+			<li>A mini USB to Type A USB cable. They come with your calculator, and also the 3DS I think. <a href="https://www.amazon.com/AmazonBasics-USB-2-0-Cable-Male/dp/B00NH11N5A">They look like this.</a> </li>
+			<li>TI Connect CE. Free software that you'll use to connect with your calculator. <a href="https://education.ti.com/en/software/details/en/CA9C74CAD02440A69FDC7189D7E1B6C2/swticonnectcesoftware">Download it here.</a> Ignore the "Windows (MSI)" version.</li>
+			<li>A TI-84 Plus CE or CE-T. Obviously.</li>
+		</ul>
+		<h2>Preparations</h2>
+		<p>Install the latest TI OS and Apps. This in itself a big improvement if you haven't updated your calculator since you bought it. Download the top item <a href="https://education.ti.com/en/software/details/en/BCBFECEC5F4242B28E9AE89DA7C4BA59/TI-84-Plus-CE-OS-Apps-Bundle">here.</a> Drag the TI84CEBundle-xxx files to the calculator icon shown below in TI Connect. Make sure your calculator is on and connected. Hit send to transfer and do not disconnect your calculator until you get to the flashing cursor on its display or TI splash screen.</p>
+		<img class="one" src="images/ticonnect.png" alt="TI Connect CE">
+		<p>Reset the calculator memory. Hit this sequence of keys in order, one after each menu pops up.</p>
+		<ul>
+			<li>[2nd]</li>
+			<li>[+]</li>
+			<li>[7]</li>
+			<li>[1]</li>
+			<li>[2]</li>
+		</ul>
+		<p>That's it!</p>
+		<h2>Good Resources</h2>
+		<ul>
+			<li>tibasicdev.wikidot.com</li>
+			<li>ticalc.org</li>
+			<li>cemetech.net</li>
+			<li>education.ti.com/en/products/calculators/graphing-calculators/ti-84-plus-ce</li>
+		</ul>
+		<p>Many of the libraries and codes we need come from here. Big props to these guys.</p>
+		<h2>The Cesium Shell</h2>
+		<p> The Cesium shell is an important piece of software which provides lots of the functionality I outlined. It is developed and maintained by Matt Waltz. (@MateoConLechuga) It can be built from https://github.com/mateoconlechuga/cesium.git or simply downloaded as a zip <a href="https://github.com/mateoconlechuga/cesium/releases">from here.</a></p>
+		<h4>Installing Cesium</h4>
+		<p>In order to install Cesium, drag Cesium.8xp to your calculator as you did above. Once transferred, run it. Now, you can safely delete the installer if it's still there (check the PRGM menu). Delete it using the Memory Management menu ([2nd], [+], [2], [7]) and use the the DEL key. </p>
+		<p>Now, use the APPS menu to open Cesium. It's #4 for me.</p>
+		<img src="images/cesium1.png" alt="cesium1.png">
+		<p>This will bring you to the main screen.</p>
+		<img src="images/cesium2.png" alt="cesium2.png">
+		<p>From here, you can use the arrow keys to navigate up and down the menu. Run a program with [enter]. Edit settings with [alpha]. Lock a file to prevent editing. Hiding a file prevents it from showing in the memory management or PRGM menus. It will then <i>only</i> be accessible from the Cesium shell. Archiving a folder will prevent it from being erased during a RAM reset, which is the preferred method of resetting calculators in my experience. Definitely will survive whatever they do to your calc for the SAT. It did for me. Additonally, in newer versions of the TI OS, you can run programs without unarchiving, which is nice. </p>
+		<p>You can use the shortcut to quickly open Cesium. The default shortcut is [on]+[PRGM]. Hold them simultaneously as you would the shift key on a keyboard. After a memory reset you must launch Cesium from the apps menu for the shortcut to work.</p>
+		<h2>Table of Contents</h2>
+		<div id="toc_container">
+<p class="toc_title">Functionality</p>
+<ul class="toc_list">
+  <li><a href="#Equation Solver">Equation Solvers</a>
+	  <ul>
+	  <li><a href="#Numeric">Numeric Solver</a></li>
+	  <li><a href="#Polynomial">Polynomial Root Finder</a></li>
+	  <li><a href="#Simultaneous Equations">Simultaneous Equation Solver</a></li>
+	  </ul>
+</li>
+<li><a href="#geometry">Geometry</a></li>
+	<ul>
+		<li><a href="#Conics">Conics</a></li>
+		<li><a href="#General Geometry">General Geometry</a></li>
+	</ul>
+<li><a href="#Third_Point_Header">3 Third Point Header</a></li>
+</ul>
+</div>
+		
+		<h2 id="Equation Solver">Equation Solvers</h2>
+		<h4 id="Numeric">Numeric Solver</h4>
+		<p>The numeric solver is a useful functionality built into new calculator OS versions. To use it, make sure you are in mathprint mode (hit mode and it's the first option.) Then, hit the [MATH] key and the up arrow. The default location for it is C, which scrolling one up from the top should bring you to. </p>
+		<img src="images/eqsolver.png" alt="eqsolver.png">
+		<p>To use it, enter the left side of the equation in the top box, hit [enter], and enter the right side in the bottom box. Then hit enter and then graph to solve. It can handle multiple variables when the equation permits. For equations with multiple solution, adjust the bounds (min/max, default is -1e99 to 1e99 so ℝ) or enter a guess value next to the variable letter. For example, if you want to check for a negative value, enter a low negative value. The calculator checks outward in both directions from the guess value for the nearest real solution.</p>
+		<img src="images/eqsolver2.png" alt="eqsolver2.png">
+		<h4 id="Polynomial">Polynomial Root Finder</h4>
+		<p>Your calculator can also automatically find the real and imaginary roots of polynomials. You don't even need to know the quadratic formula. Use it by opening the apps menu and choosing 'PlySmlt2.' It's #9 for me. Then, select the first item (you can just hit 1.) This will bring you to this menu</p>
+		<img src="images/plysmlt.png" alt="plysmlt.png">
+		<p>From here, select the order (degree) of the polynomial. Then you can choose whether to look for only real solutions, or also imaginary solutions in your preferred format. There's also a radian/degree option. Hit graph when done.</p>
+		<img src="images/plysmlt2.png" alt="plysmlt2.png">
+		<p>Here, hit enter to edit each value, hit enter, and arrow over to edit the next. You can edit the signs too. Your polynomial must be in general form as seen below.</p>
+		<img src="images/generalform.png" alt="generalform.png" width="50%" height="50%">
+		<p>Once completely entered, hit [graph] to solve. You should see the roots. Hit graph again to convert fractions to decimals or vice versa where applicable. To exit from here, hit [y=] and hit [6]. </p>
+		<h4 id="Simultaneous">Simultaneous Equation Solver</h4>
+		<p>The same PLYSMLT2 app can also solve simultaneous equations. In the app, choose option 2 - Simultaneous Eqn Solver. You can now select the number of equations and variables/unknowns.</p>
+		<img src="images/smlt.png" alt="smlt.png"> 
+		<p>Hit [graph] when done and enter your equations the same way as you did with your polynomial earlier. Hit graph again to solve. </p>
+		<h2 id="geometry">Geometry</h2>
+		<h4 id="conics">Conics</h4>
+		<p>Your calculator can also give you information on conic geometry figures. To do this, open the "Conics" app, #5 for me. Choose your shape and equation type. Enter the equation in the form you selected and then hit [alpha] and then [enter]. this will give you the relevant information.</p>
+		<img src="images/conics.png" alt="conics.png">
+		<img src="images/conics2.png" alt="conics2.png">
+		<h4 id="General Geometry">General Geometry</h4>
+		<p>For this section, you'll need to install a program. You can download it <a href="assets/files/GEOMETRY.8xp">here.</a> I have rehosted it because I cannot locate the original author.</p>
+	</body>
+</html>
